@@ -50,6 +50,11 @@ public class NewController {
 		return  newService.getAll();
 	}
 	
+	@GetMapping("/news/categorie/{categorie}")
+	public List<New> getByCategorie(@PathVariable String categorie){
+		return  newService.getByCategorie(categorie);
+	}
+	
 	@GetMapping("/news/{id}")
 	public New getOne(@PathVariable String id) {
 		return  newService.getOne(id);

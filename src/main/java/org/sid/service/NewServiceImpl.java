@@ -32,8 +32,13 @@ public class NewServiceImpl implements NewService{
 
 	@Override
 	public Void delete(String _id) {
-		 newRepository.deleteById(_id);
+		newRepository.deleteById(_id);
 		return null;
+	}
+
+	@Override
+	public List<New> getByCategorie(String categorie) {
+		return newRepository.findByCategorie(categorie);
 	}
 
 }
