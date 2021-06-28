@@ -28,7 +28,7 @@ public class NewController {
 	@PostMapping("/news")
 	public New save(@RequestParam("title") String title,
 			        @RequestParam("description") String description,
-			        @RequestParam("image",required = false) MultipartFile image,
+			        @RequestParam(value ="image",required = false) MultipartFile image,
 			        @RequestParam("categorie") String categorie,
 			        @RequestParam("author") String author) throws IOException {
 		
@@ -36,7 +36,8 @@ public class NewController {
 		n.setTitle(title);
 		n.setDescription(description);
 		n.setCategorie(categorie);
-		
+		if(image!=null)
+		n.setImage(image.getBytes());
 		n.setAuthor(author);
 		n = newService.save(n);
 		n.setImageUrl(ServletUriComponentsBuilder
