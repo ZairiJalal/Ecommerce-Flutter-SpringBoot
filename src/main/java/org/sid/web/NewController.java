@@ -28,7 +28,7 @@ public class NewController {
 	@PostMapping("/news")
 	public New save(@RequestParam("title") String title,
 			        @RequestParam("description") String description,
-			        @RequestParam("image") MultipartFile image,
+			        @RequestParam("image",required = false) MultipartFile image,
 			        @RequestParam("categorie") String categorie,
 			        @RequestParam("author") String author) throws IOException {
 		
