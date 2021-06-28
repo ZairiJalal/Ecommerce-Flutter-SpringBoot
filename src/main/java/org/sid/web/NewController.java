@@ -36,8 +36,7 @@ public class NewController {
 		n.setTitle(title);
 		n.setDescription(description);
 		n.setCategorie(categorie);
-		if(image!=null)
-		n.setImage(image.getBytes());
+		
 		n.setAuthor(author);
 		n = newService.save(n);
 		n.setImageUrl(ServletUriComponentsBuilder
