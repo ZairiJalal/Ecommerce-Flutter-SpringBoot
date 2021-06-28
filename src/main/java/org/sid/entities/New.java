@@ -1,6 +1,7 @@
 package org.sid.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -19,9 +20,11 @@ public class New implements Serializable{
 	private String _id;
 	private String title;
 	private String description;
+	private Date date= new Date();
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private byte[] image;
 	private String imageUrl;
 	private String categorie;
+	private String author;
 
 }

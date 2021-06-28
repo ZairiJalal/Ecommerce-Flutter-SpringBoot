@@ -29,13 +29,15 @@ public class NewController {
 	public New save(@RequestParam("title") String title,
 			        @RequestParam("description") String description,
 			        @RequestParam("image") MultipartFile image,
-			        @RequestParam("categorie") String categorie) throws IOException {
+			        @RequestParam("categorie") String categorie,
+			        @RequestParam("author") String author) throws IOException {
 		
 		New n = new New();
 		n.setTitle(title);
 		n.setDescription(description);
 		n.setCategorie(categorie);
 		n.setImage(image.getBytes());
+		n.setAuthor(author);
 		n = newService.save(n);
 		n.setImageUrl(ServletUriComponentsBuilder
 	                  .fromCurrentContextPath()
